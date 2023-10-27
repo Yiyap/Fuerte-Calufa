@@ -12,7 +12,7 @@
             <p class="text-sm mb-12">
                 {{
                     new Date(weatherData.currentTime).toLocaleDateString(
-                        "en-gb",
+                        "es-es",
                         {
                             weekday: "short",
                             day: "2-digit",
@@ -22,7 +22,7 @@
                 }}
                 {{
                     new Date(weatherData.currentTime).toLocaleTimeString(
-                        "en-gb",
+                        "es-es",
                         {
                             timeStyle: "short",
                         }
@@ -80,7 +80,7 @@
                     <p class="flex-1">
                         {{
                             new Date(day.dt * 1000).toLocaleDateString(
-                                "en-gb",
+                                "es-es",
                                 {
                                     weekday: "long",
                                 }
