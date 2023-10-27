@@ -11,11 +11,11 @@
             </p>
             <div class="flex gap-2">
                 <span class="text-xs">
-                    H:
+                    Max:
                     {{ Math.round(city.weather.main.temp_max) }}&deg;
                 </span>
                 <span class="text-xs">
-                    L:
+                    Min:
                     {{ Math.round(city.weather.main.temp_min) }}&deg;
                 </span>
             </div>

@@ -6,13 +6,13 @@
                 Ahora estás viendo está ciudad, selecciona el "+" para registrarla.
             </p>
         </div>
-        <!-- Weather Overview -->
+        <!-- Previsualización del tiempo -->
         <div class="flex flex-col items-center text-white py-12">
             <h1 class="text-4xl mb-2">{{ route.params.city }}</h1>
             <p class="text-sm mb-12">
                 {{
                     new Date(weatherData.currentTime).toLocaleDateString(
-                        "en-us",
+                        "es-es",
                         {
                             weekday: "short",
                             day: "2-digit",
@@ -22,7 +22,7 @@
                 }}
                 {{
                     new Date(weatherData.currentTime).toLocaleTimeString(
-                        "en-us",
+                        "es-es",
                         {
                             timeStyle: "short",
                         }
@@ -55,7 +55,7 @@
                             {{
                                 new Date(
                                     hourData.currentTime
-                                ).toLocaleTimeString("en-us", {
+                                ).toLocaleTimeString("es-es", {
                                     hour: "numeric",
                                 })
                             }}
@@ -80,7 +80,7 @@
                     <p class="flex-1">
                         {{
                             new Date(day.dt * 1000).toLocaleDateString(
-                                "en-us",
+                                "es-es",
                                 {
                                     weekday: "long",
                                 }
@@ -116,13 +116,13 @@ const getWeatherData = async () => {
             `https://api.openweathermap.org/data/2.5/onecall?lat=${route.query.lat}&lon=${route.query.lng}&exclude={part}&appid=aa0147bf827f04a235cbd0561d89b635&units=imperial`
         );
 
-        // cal current date & time
+        // Llamada a la hora y fecha 
         const localOffset = new Date().getTimezoneOffset() * 60000;
         const utc = weatherData.data.current.dt * 1000 + localOffset;
         weatherData.data.currentTime =
             utc + 1000 * weatherData.data.timezone_offset;
 
-        // cal hourly weather offset
+        // Llamada meteorologica
         weatherData.data.hourly.forEach((hour) => {
             const utc = hour.dt * 1000 + localOffset;
             hour.currentTime =
