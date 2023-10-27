@@ -12,7 +12,7 @@
             <p class="text-sm mb-12">
                 {{
                     new Date(weatherData.currentTime).toLocaleDateString(
-                        "es-es",
+                        "en-gb",
                         {
                             weekday: "short",
                             day: "2-digit",
@@ -22,7 +22,7 @@
                 }}
                 {{
                     new Date(weatherData.currentTime).toLocaleTimeString(
-                        "es-es",
+                        "en-gb",
                         {
                             timeStyle: "short",
                         }
@@ -80,7 +80,7 @@
                     <p class="flex-1">
                         {{
                             new Date(day.dt * 1000).toLocaleDateString(
-                                "es-es",
+                                "en-gb",
                                 {
                                     weekday: "long",
                                 }
@@ -90,8 +90,8 @@
                     <img class="w-[50px] h-[50px] object-cover" :src="`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`
                             " alt="" />
                     <div class="flex gap-2 flex-1 justify-end">
-                        <p>H: {{ Math.round(day.temp.max) }}</p>
-                        <p>L: {{ Math.round(day.temp.min) }}</p>
+                        <p>Max: {{ Math.round(day.temp.max) }}</p>
+                        <p>Min: {{ Math.round(day.temp.min) }}</p>
                     </div>
                 </div>
             </div>
